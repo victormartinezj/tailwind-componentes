@@ -69,5 +69,85 @@
         Submit
       </button>
     </form>
+    <form class="flex flex-col border py-5 px-3 rounded shadow-lg" action="">
+      <div>
+        <label class="mb-2" for="password">Password </label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+            mb-3
+            mx-5
+          "
+          type="password"
+          name="namepassword"
+          id="password"
+        />
+        <span class="text-sm text-gray-400">
+          Must be 8-20 characters long.
+        </span>
+      </div>
+    </form>
+    <form class="flex flex-col border py-5 px-3 rounded shadow-lg" action="">
+      <label class="mb-2" for="email">Email address</label>
+      <input
+        class="
+          outline-none
+          border border-gray-500
+          bg-opacity-30 bg-gray-400
+          rounded
+          py-1
+          px-3
+        "
+        type="email"
+        name="nameemail"
+        id="email"
+        disabled
+      />
+      <p class="text-sm text-gray-500 px-1 mb-3">
+        We'll never share your email with anyone else.
+      </p>
+      <label class="mb-2" for="password">Password </label>
+      <input
+        class="
+          outline-none
+          border border-gray-500
+          rounded
+          py-1
+          px-3
+          mb-3
+          bg-opacity-30 bg-gray-400
+        "
+        type="password"
+        name="namepassword"
+        id="password"
+        disabled
+      />
+      <div>
+        <input type="checkbox" name="namecheckbox" id="check" disabled />
+        <label class="text-gray-400" for="check">Check me out</label>
+      </div>
+      <button
+        class="
+          bg-blue-500 bg-opacity-30
+          text-white
+          py-2
+          px-3
+          rounded
+          inline-block
+          w-32
+          cursor-not-allowed
+        "
+        type="submit"
+        disabled
+      >
+        Submit
+      </button>
+    </form>
   </body>
 </html>
