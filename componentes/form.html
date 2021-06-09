@@ -141,3 +141,122 @@
     Submit
   </button>
 </form>
+
+<!-- form control -->
+
+<form class="flex flex-col border py-5 px-3 rounded shadow-lg" action="">
+  <label class="mb-2" for="email">Email address</label>
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      focus:border-blue-500
+      rounded
+      py-1
+      px-3
+      focus:ring-4 focus:ring-blue-200
+      mb-3
+    "
+    type="email"
+    name="nameemail"
+    id="email"
+  />
+  <label for="text">Example textarea</label>
+  <textarea
+    class="
+      outline-none
+      border border-gray-500
+      focus:border-blue-500
+      rounded
+      py-1
+      px-3
+      focus:ring-4 focus:ring-blue-200
+      mb-3
+    "
+    name="nametext"
+    id="text"
+    cols="1"
+    rows="5"
+  ></textarea>
+</form>
+
+<form class="flex flex-col my-5 border" action="">
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      focus:border-blue-500
+      rounded
+      py-2
+      px-3
+      focus:ring-4 focus:ring-blue-200
+      mb-3
+      text-lg
+    "
+    placeholder=".form-control-lg"
+    type="text"
+  />
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      focus:border-blue-500
+      rounded
+      py-1
+      px-3
+      focus:ring-4 focus:ring-blue-200
+      mb-3
+    "
+    type="text"
+    placeholder="Default input"
+  />
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      focus:border-blue-500
+      rounded
+      py-1
+      px-3
+      focus:ring-4 focus:ring-blue-200
+      mb-3
+      text-sm
+    "
+    type="text"
+    placeholder=".form-control-sm"
+  />
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      bg-gray-400 bg-opacity-30
+      rounded
+      py-1
+      px-3
+      mb-3
+      text-sm
+      focus:ring-4 focus:ring-blue-200
+      focus:border-blue-500
+    "
+    type="text"
+    placeholder="Readonly input here..."
+    readonly
+  />
+  <input
+    class="
+      outline-none
+      border border-gray-500
+      bg-gray-400 bg-opacity-30
+      rounded
+      py-1
+      px-3
+      mb-3
+      text-sm
+      focus:ring-4 focus:ring-blue-200
+      focus:border-blue-500
+    "
+    type="text"
+    value="email@example.com"
+    readonly
+  />
+</form>
