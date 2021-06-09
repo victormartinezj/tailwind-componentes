@@ -11,121 +11,105 @@
     />
   </head>
   <body class="px-5 py-5">
-    <form class="flex flex-col border py-5 px-3 rounded shadow-lg" action="">
-      <label class="mb-2" for="email">Email address</label>
-      <input
+    <form class="flex flex-col" action="">
+      <select
         class="
           outline-none
-          border border-gray-500
-          focus:border-blue-500
-          rounded
-          py-1
-          px-3
-          focus:ring-4 focus:ring-blue-200
-          mb-3
-        "
-        type="email"
-        name="nameemail"
-        id="email"
-      />
-      <label for="text">Example textarea</label>
-      <textarea
-        class="
-          outline-none
-          border border-gray-500
-          focus:border-blue-500
-          rounded
-          py-1
-          px-3
-          focus:ring-4 focus:ring-blue-200
-          mb-3
-        "
-        name="nametext"
-        id="text"
-        cols="1"
-        rows="5"
-      ></textarea>
-    </form>
-
-    <form class="flex flex-col my-5 border" action="">
-      <input
-        class="
-          outline-none
-          border border-gray-500
-          focus:border-blue-500
+          border
           rounded
           py-2
+          px-2
+          focus:border-blue-400
+          focus:ring-4 focus:ring-blue-200
+          mb-3
+        "
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select
+        class="
+          outline-none
+          border
+          rounded
+          py-3
           px-3
+          focus:border-blue-400
           focus:ring-4 focus:ring-blue-200
           mb-3
           text-lg
         "
-        placeholder=".form-control-lg"
-        type="text"
-      />
-      <input
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select
         class="
           outline-none
-          border border-gray-500
-          focus:border-blue-500
+          border
           rounded
           py-1
-          px-3
-          focus:ring-4 focus:ring-blue-200
-          mb-3
-        "
-        type="text"
-        placeholder="Default input"
-      />
-      <input
-        class="
-          outline-none
-          border border-gray-500
-          focus:border-blue-500
-          rounded
-          py-1
-          px-3
+          px-1
+          focus:border-blue-400
           focus:ring-4 focus:ring-blue-200
           mb-3
           text-sm
         "
-        type="text"
-        placeholder=".form-control-sm"
-      />
-      <input
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select
         class="
           outline-none
-          border border-gray-500
-          bg-gray-400 bg-opacity-30
+          border
           rounded
-          py-1
-          px-3
-          mb-3
-          text-sm
+          py-2
+          px-2
+          focus:border-blue-400
           focus:ring-4 focus:ring-blue-200
-          focus:border-blue-500
+          mb-3
         "
-        type="text"
-        placeholder="Readonly input here..."
-        readonly
-      />
-      <input
+        multiple
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select
         class="
           outline-none
-          border border-gray-500
-          bg-gray-400 bg-opacity-30
+          border
           rounded
-          py-1
-          px-3
-          mb-3
-          text-sm
+          py-2
+          px-2
+          focus:border-blue-400
           focus:ring-4 focus:ring-blue-200
-          focus:border-blue-500
+          mb-3
         "
-        type="text"
-        value="email@example.com"
-        readonly
-      />
+        size="3"
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+      <select
+        class="outline-none border rounded py-2 px-2 bg-gray-200 mb-3"
+        disabled
+      >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
     </form>
   </body>
 </html>
