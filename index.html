@@ -10,76 +10,152 @@
       rel="stylesheet"
     />
   </head>
-  <body class="py-20 px-4">
-    <div class="w-10 h-10 relative mb-5">
-      <span
-        class="absolute inline-block w-full h-full rounded-full bg-red-500"
-      ></span>
-      <div
-        class="animate-ping absolute w-full h-full rounded-full bg-red-500"
-      ></div>
-    </div>
-    <div class="w-20 h-20">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 animate-bounce"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
-    </div>
-
-    <div class="relative w-10 h-10 rounded-full mb-10">
-      <span
-        class="absolute w-full h-full border-2 border-red-300 rounded-full"
-      ></span>
-      <span
-        class="
-          animate-spin
-          absolute
-          w-full
-          h-full
-          border-t-2 border-red-500
-          rounded-full
-        "
-      ></span>
-    </div>
-
-    <div class="w-72 border rounded animate-pulse">
-      <div class="h-40">
-        <img
-          class="h-full w-full object-cover rounded-t"
-          src="https://cdn.pixabay.com/photo/2015/11/04/20/59/milky-way-1023340_960_720.jpg"
-          alt=""
+  <body class="px-5 py-5">
+    <div class="grid gap-1 sm:grid-cols-6">
+      <div class="sm:col-span-3 flex flex-col">
+        <label class="mb-2" for="email">Email</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="email"
+          name="nameemail"
+          id="email"
         />
       </div>
-      <div class="bg-white py-5 px-4">
-        <h2 class="mb-5 text-xl">Card title</h2>
-        <p class="card-text mb-5">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
+      <div class="sm:col-span-3 flex flex-col">
+        <label class="mb-2" for="password">Password</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="password"
+          name="namepassword"
+          id="password"
+        />
+      </div>
+      <div class="sm:col-span-6 flex flex-col">
+        <label class="mb-2" for="address">Address</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="text"
+          name="nameaddress"
+          id="address"
+        />
+      </div>
+      <div class="sm:col-span-6 flex flex-col">
+        <label class="mb-2" for="address2">Address 2</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="text"
+          name="nameaddress2"
+          id="address2"
+        />
+      </div>
+      <div class="sm:col-span-3 flex flex-col">
+        <label class="mb-2" for="city">City</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="text"
+          name="namecity"
+          id="city"
+        />
+      </div>
+      <div class="sm:col-span-2 flex flex-col">
+        <label class="mb-2" for="state">State</label>
+
+        <select
+          class="
+            outline-none
+            border border-gray-500
+            rounded
+            pt-1
+            pb-2
+            px-2
+            focus:border-blue-400
+            focus:ring-4 focus:ring-blue-200
+            mb-3
+          "
+          id="state"
+        >
+          <option selected>Choose...</option>
+        </select>
+      </div>
+      <div class="sm:col-span-1 flex flex-col">
+        <label class="mb-2" for="zip">Zip</label>
+        <input
+          class="
+            outline-none
+            border border-gray-500
+            focus:border-blue-500
+            rounded
+            py-1
+            px-3
+            focus:ring-4 focus:ring-blue-200
+          "
+          type="text"
+          name="namezip"
+          id="zip"
+        />
+      </div>
+      <div class="sm:col-span-6">
+        <input type="checkbox" name="namecheckbox" id="check" />
+        <label for="check">Check me out</label>
+      </div>
+      <div class="sm:col-span-6">
         <button
           class="
             bg-blue-500
             text-white
             py-2
-            px-3
+            px-1
             rounded
             hover:bg-blue-600
             focus:bg-blue-600
             focus:ring-4 focus:ring-blue-300
             focus:outline-none
+            inline-block
+            w-20
           "
+          type="submit"
         >
-          Go somewhere
+          Sign in
         </button>
       </div>
     </div>
