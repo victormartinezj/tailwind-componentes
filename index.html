@@ -84,10 +84,34 @@
       >
         Tooltip on left
       </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-t-html"
+      >
+        Tooltip on left
+      </button>
     </div>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script src="index.js"></script>
-    <script></script>
+    <script>
+      tippy("#tooltip-t-html", {
+        allowHTML: true,
+        content:
+          "<span class='text-red-500 font-semibold'>Tooltip</span> <span class='italic text-green-500'>with </span><span class='underline text-blue-500'>Tailwind</span> 🤫 ",
+      });
+    </script>
   </body>
 </html>
