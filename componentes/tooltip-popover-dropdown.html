@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/themes/light-border.css"
+    />
+  </head>
+  <body class="px-5 py-5">
+    <div class="my-12">
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-t"
+      >
+        Tooltip on top
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-b"
+      >
+        Tooltip on bottom
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-r"
+      >
+        Tooltip on right
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-l"
+      >
+        Tooltip on left
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="tooltip-t-html"
+      >
+        Tooltip on left
+      </button>
+    </div>
+    <div class="my-12">
+      <button
+        class="
+          bg-red-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-red-600
+          focus:bg-red-600
+          focus:ring-4 focus:ring-red-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="popover-t"
+      >
+        Popover on top
+      </button>
+      <button
+        class="
+          bg-red-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-red-600
+          focus:bg-red-600
+          focus:ring-4 focus:ring-red-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="popover-b"
+      >
+        Popover on bottom
+      </button>
+      <button
+        class="
+          bg-red-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-red-600
+          focus:bg-red-600
+          focus:ring-4 focus:ring-red-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="popover-r"
+      >
+        Popover on right
+      </button>
+      <button
+        class="
+          bg-red-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-red-600
+          focus:bg-red-600
+          focus:ring-4 focus:ring-red-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="popover-l"
+      >
+        Popover on left
+      </button>
+    </div>
+    <div>
+      <button
+        class="
+          bg-green-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-green-600
+          focus:bg-green-600
+          focus:ring-4 focus:ring-green-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="dropdown-b"
+      >
+        Dropdown button
+        <svg
+          id="open-dropdown"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 inline"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+        <svg
+          id="close-dropdown"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 inline hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 15l7-7 7 7"
+          />
+        </svg>
+      </button>
+    </div>
+    <div id="dropdown-content" class="hidden">
+      <div>
+        <ul id="lista-close" class="flex flex-col">
+          <a class="py-1 px-2" href="#s">Action</a
+          ><a class="py-1 px-2" href="#d">Another action</a
+          ><a class="py-1 px-2" href="#g">Something else here</a>
+        </ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="../index.js"></script>
+    <script></script>
+  </body>
+</html>
