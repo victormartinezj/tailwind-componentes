@@ -181,40 +181,67 @@
         Popover on left
       </button>
     </div>
+    <div>
+      <button
+        class="
+          bg-green-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-green-600
+          focus:bg-green-600
+          focus:ring-4 focus:ring-green-300
+          focus:outline-none
+          inline-block
+        "
+        type="submit"
+        id="dropdown-b"
+      >
+        Dropdown button
+      </button>
+    </div>
+    <div id="dropdown-content" class="hidden">
+      <div>
+        <ul id="lista-close" class="flex flex-col">
+          <a class="py-1 px-2" href="#s">Action</a
+          ><a class="py-1 px-2" href="#d">Another action</a
+          ><a class="py-1 px-2" href="#g">Something else here</a>
+        </ul>
+      </div>
+    </div>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script src="index.js"></script>
     <script>
-      tippy("#popover-t", {
+      const dropdownContent = document.getElementById("dropdown-content");
+
+      tippy("#dropdown-b", {
         theme: "light-border",
-        content: "Top popover",
-        trigger: "click",
-        hideOnClick: "toggle",
-        interactive: true,
-      });
-      tippy("#popover-b", {
-        theme: "light-border",
+        content: dropdownContent.innerHTML,
+        allowHTML: true,
         placement: "bottom",
-        content: "Bottom popover",
         trigger: "click",
-        hideOnClick: "toggle",
+        hideOnClick: true,
         interactive: true,
-      });
-      tippy("#popover-r", {
-        theme: "light-border",
-        placement: "right",
-        content: "Right popover",
-        trigger: "click",
-        hideOnClick: "toggle",
-        interactive: true,
-      });
-      tippy("#popover-l", {
-        theme: "light-border",
-        placement: "left",
-        content: "Left popover",
-        trigger: "click",
-        hideOnClick: "toggle",
-        interactive: true,
+        arrow: false,
+        onCreate(instance) {
+          console.log("create");
+          instance._closeTippy = function (e) {
+            console.log("close tippy");
+            instance.hide();
+          };
+        },
+        onMount(instance) {
+          console.log("mount");
+          const lista = document.getElementById("lista-close");
+          lista.addEventListener("click", instance._closeTippy);
+        },
+        onHide(instance) {
+          const lista = document.getElementById("lista-close");
+          console.log("hide");
+          lista.removeEventListener("click", instance._closeTippy);
+        },
       });
     </script>
   </body>

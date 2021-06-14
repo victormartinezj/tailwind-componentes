@@ -55,3 +55,35 @@ tippy("#popover-l", {
   hideOnClick: "toggle",
   interactive: true,
 });
+
+// dropdown
+
+const dropdownContent = document.getElementById("dropdown-content");
+
+tippy("#dropdown-b", {
+  theme: "light-border",
+  content: dropdownContent.innerHTML,
+  allowHTML: true,
+  placement: "bottom",
+  trigger: "click",
+  hideOnClick: true,
+  interactive: true,
+  arrow: false,
+  onCreate(instance) {
+    console.log("create");
+    instance._closeTippy = function (e) {
+      console.log("close tippy");
+      instance.hide();
+    };
+  },
+  onMount(instance) {
+    console.log("mount");
+    const lista = document.getElementById("lista-close");
+    lista.addEventListener("click", instance._closeTippy);
+  },
+  onHide(instance) {
+    const lista = document.getElementById("lista-close");
+    console.log("hide");
+    lista.removeEventListener("click", instance._closeTippy);
+  },
+});
