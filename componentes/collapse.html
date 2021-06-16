@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/themes/light-border.css"
+    />
+  </head>
+  <body class="px-5 py-5">
+    <div>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-hc-control="primer"
+      >
+        Link with href
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-hc-control="primer"
+      >
+        Button with data-bs-target
+      </button>
+      <p class="px-2 py-2 border-2 mt-5" data-hc-content="primer">
+        Some placeholder content for the collapse component. This panel is
+        hidden by default but revealed when the user activates the relevant
+        trigger.
+      </p>
+    </div>
+    <div>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-sc-control="primer"
+      >
+        Toggle first element
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-sc-control="second"
+      >
+        Toggle second element
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        onclick="secondCollapseOP()"
+      >
+        Toggle all elements
+      </button>
+      <div>
+        <p
+          class="w-2/5 px-2 py-2 border-2 my-5 rounded inline-block"
+          data-sc-content="primer"
+        >
+          Some placeholder content for the collapse component. This panel is
+          hidden by default but revealed when the user activates the relevant
+          trigger.
+        </p>
+        <p
+          class="w-2/5 px-2 py-2 border-2 my-5 rounded inline-block"
+          data-sc-content="second"
+        >
+          Some placeholder content for the collapse component. This panel is
+          hidden by default but revealed when the user activates the relevant
+          trigger.
+        </p>
+      </div>
+    </div>
+
+    <script src="../handy-collapse.js"></script>
+    <script>
+      const primerCollapse = new HandyCollapse();
+
+      const secondCollapse = new HandyCollapse({
+        nameSpace: "sc",
+        closeOthers: false,
+        animationSpeed: 100,
+        cssEasing: "linear",
+      });
+
+      function secondCollapseOP() {
+        // console.log(secondCollapse.itemsState);
+        for (const element in secondCollapse.itemsState) {
+          if (secondCollapse.itemsState[element].isOpen) {
+            secondCollapse.close(element);
+            continue;
+          }
+          secondCollapse.open(element);
+        }
+      }
+    </script>
+  </body>
+</html>
