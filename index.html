@@ -54,10 +54,69 @@
         trigger.
       </p>
     </div>
+    <div>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-sc-control="primer"
+      >
+        Toggle first element
+      </button>
+      <button
+        class="
+          bg-blue-500
+          text-white
+          py-2
+          px-3
+          rounded
+          hover:bg-blue-600
+          focus:bg-blue-600
+          focus:ring-4 focus:ring-blue-300
+          focus:outline-none
+        "
+        data-sc-control="second"
+      >
+        Toggle second element
+      </button>
+      <div>
+        <p
+          class="w-2/5 px-2 py-2 border-2 my-5 rounded inline-block"
+          data-sc-content="primer"
+        >
+          Some placeholder content for the collapse component. This panel is
+          hidden by default but revealed when the user activates the relevant
+          trigger.
+        </p>
+        <p
+          class="w-2/5 px-2 py-2 border-2 my-5 rounded inline-block"
+          data-sc-content="second"
+        >
+          Some placeholder content for the collapse component. This panel is
+          hidden by default but revealed when the user activates the relevant
+          trigger.
+        </p>
+      </div>
+    </div>
 
     <script src="handy-collapse.js"></script>
     <script>
       const primerCollapse = new HandyCollapse();
+
+      const secondCollapse = new HandyCollapse({
+        nameSpace: "sc",
+        closeOthers: false,
+        animationSpeed: 100,
+        cssEasing: "linear",
+      });
     </script>
   </body>
 </html>
