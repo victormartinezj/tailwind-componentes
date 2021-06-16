@@ -29,7 +29,7 @@
         Accordion Item #1
       </button>
 
-      <p class="px-3 py-4" data-accordion-content="first">
+      <p class="px-3 py-4 hidden" data-accordion-content="first">
         This is the first item's accordion body. It is shown by default, until
         the collapse plugin adds the appropriate classes that we use to style
         each element. These classes control the overall appearance, as well as
@@ -51,7 +51,7 @@
         Accordion Item #2
       </button>
 
-      <p class="px-3 py-4" data-accordion-content="second">
+      <p class="px-3 py-4 hidden" data-accordion-content="second">
         This is the first item's accordion body. It is shown by default, until
         the collapse plugin adds the appropriate classes that we use to style
         each element. These classes control the overall appearance, as well as
@@ -73,7 +73,7 @@
         Accordion Item #3
       </button>
 
-      <p class="px-3 py-4" data-accordion-content="third">
+      <p class="px-3 py-4 hidden" data-accordion-content="third">
         This is the first item's accordion body. It is shown by default, until
         the collapse plugin adds the appropriate classes that we use to style
         each element. These classes control the overall appearance, as well as
@@ -92,6 +92,25 @@
         nameSpace: "accordion",
         animationSpeed: 100,
         cssEasing: "linear",
+        onSlideEnd: (isOpen, contentID) => {
+          const buttons = document.querySelectorAll("[data-accordion-control]");
+          // console.log(buttons);
+
+          buttons.forEach((button) => {
+            const selfID = button.getAttribute("data-accordion-control");
+            console.log(selfID);
+            const selfContent = document.querySelector(
+              `[data-accordion-content='${selfID}']`
+            );
+            if (button.classList.contains("is-active")) {
+              button.classList.add("bg-blue-200", "text-blue-600");
+              selfContent.classList.remove("hidden");
+            } else {
+              button.classList.remove("bg-blue-200", "text-blue-600");
+              selfContent.classList.add("hidden");
+            }
+          });
+        },
       });
     </script>
   </body>
