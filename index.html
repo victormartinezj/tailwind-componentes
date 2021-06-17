@@ -92,13 +92,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <script>
       new Splide(".splide", {
-        type: "loop",
-        // rewind: false,
+        type: "fade",
+        rewind: true,
         height: "50vh",
-        autoplay: false,
-        interval: 2000,
+        autoplay: true,
+        interval: 3000,
         pagination: true,
         arrows: true,
+        drag: true,
         // cover: true,
       }).mount();
     </script>
