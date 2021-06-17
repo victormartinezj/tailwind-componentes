@@ -18,13 +18,73 @@
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
     />
   </head>
-  <body class="px-5">
+  <body class="px-5 py-5">
     <div class="splide bg-yellow-400">
       <div class="splide__track">
         <div class="splide__list">
-          <div class="splide__slide bg-blue-600">Slide 01</div>
-          <div class="splide__slide bg-red-600">Slide 02</div>
-          <div class="splide__slide bg-green-600">Slide 03</div>
+          <div class="splide__slide bg-blue-600 relative">
+            <img
+              class="absolute"
+              src="https://cdn.pixabay.com/photo/2021/05/19/14/31/dandelion-6266230_960_720.jpg"
+            />
+            <div
+              class="
+                absolute
+                bg-blue-600
+                w-full
+                h-full
+                bg-opacity-30
+                flex
+                justify-center
+                items-center
+                text-xl text-white
+              "
+            >
+              Slide 01
+            </div>
+          </div>
+          <div class="splide__slide bg-red-600 relative">
+            <img
+              class="absolute"
+              src="https://cdn.pixabay.com/photo/2020/07/03/10/28/waterfall-5365926_960_720.jpg"
+            />
+            <div
+              class="
+                absolute
+                bg-red-600
+                w-full
+                h-full
+                bg-opacity-30
+                flex
+                justify-center
+                items-center
+                text-xl text-white
+              "
+            >
+              Slide 02
+            </div>
+          </div>
+          <div class="splide__slide bg-green-600 relative">
+            <img
+              class="absolute"
+              src="https://cdn.pixabay.com/photo/2021/06/01/06/24/old-town-6300696_960_720.jpg"
+            />
+            <div
+              class="
+                absolute
+                bg-green-600
+                w-full
+                h-full
+                bg-opacity-30
+                flex
+                justify-center
+                items-center
+                text-xl text-white
+              "
+            >
+              Slide 03
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -34,11 +94,12 @@
       new Splide(".splide", {
         type: "loop",
         // rewind: false,
-        height: "100vh",
-        autoplay: true,
+        height: "50vh",
+        autoplay: false,
         interval: 2000,
-        pagination: false,
-        arrows: false,
+        pagination: true,
+        arrows: true,
+        // cover: true,
       }).mount();
     </script>
   </body>
