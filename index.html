@@ -13,6 +13,33 @@
       rel="stylesheet"
       href="https://unpkg.com/tippy.js@6/themes/light-border.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
+    />
   </head>
-  <body class="px-5 py-5"></body>
+  <body class="px-5">
+    <div class="splide bg-yellow-400">
+      <div class="splide__track">
+        <div class="splide__list">
+          <div class="splide__slide bg-blue-600">Slide 01</div>
+          <div class="splide__slide bg-red-600">Slide 02</div>
+          <div class="splide__slide bg-green-600">Slide 03</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <script>
+      new Splide(".splide", {
+        type: "loop",
+        // rewind: false,
+        height: "100vh",
+        autoplay: true,
+        interval: 2000,
+        pagination: false,
+        arrows: false,
+      }).mount();
+    </script>
+  </body>
 </html>
