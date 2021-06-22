@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tippy.js@6/themes/light-border.css"
+    />
+  </head>
+  <body class="px-5 py-5">
+    <div class="border rounded flex flex-col divide-y-2 overflow-hidden mb-5">
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordion-control="first"
+      >
+        Accordion Item #1
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordion-content="first">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordion-control="second"
+      >
+        Accordion Item #2
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordion-content="second">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordion-control="third"
+      >
+        Accordion Item #3
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordion-content="third">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+    </div>
+    <div class="border rounded flex flex-col divide-y-2 overflow-hidden mb-5">
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordionSecond-control="first"
+      >
+        Accordion Item #1
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordionSecond-content="first">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordionSecond-control="second"
+      >
+        Accordion Item #2
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordionSecond-content="second">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+      <button
+        class="
+          px-3
+          py-4
+          text-left
+          focus:outline-none
+          focus:ring-2 focus:ring-blue-500 focus:ring-inset
+        "
+        data-accordionSecond-control="third"
+      >
+        Accordion Item #3
+      </button>
+
+      <p class="px-3 py-4 hidden" data-accordionSecond-content="third">
+        This is the first item's accordion body. It is shown by default, until
+        the collapse plugin adds the appropriate classes that we use to style
+        each element. These classes control the overall appearance, as well as
+        the showing and hiding via CSS transitions. You can modify any of this
+        with custom CSS or overriding our default variables. It's also worth
+        noting that just about any HTML can go within the .accordion-body,
+        though the transition does limit overflow.
+      </p>
+    </div>
+
+    <script src="../handy-collapse.js"></script>
+    <script>
+      const accordionFirst = new HandyCollapse({
+        nameSpace: "accordion",
+        animationSpeed: 100,
+        cssEasing: "linear",
+        onSlideEnd: (isOpen, contentID) => {
+          const buttons = document.querySelectorAll("[data-accordion-control]");
+          // console.log(buttons);
+
+          buttons.forEach((button) => {
+            const selfID = button.getAttribute("data-accordion-control");
+            console.log(selfID);
+            const selfContent = document.querySelector(
+              `[data-accordion-content='${selfID}']`
+            );
+            if (button.classList.contains("is-active")) {
+              button.classList.add("bg-blue-200", "text-blue-600");
+              selfContent.classList.remove("hidden");
+            } else {
+              button.classList.remove("bg-blue-200", "text-blue-600");
+              selfContent.classList.add("hidden");
+            }
+          });
+        },
+      });
+      const accordionSecond = new HandyCollapse({
+        nameSpace: "accordionSecond",
+        animationSpeed: 100,
+        cssEasing: "linear",
+        closeOthers: false,
+        onSlideEnd: (isOpen, contentID) => {
+          const buttons = document.querySelectorAll(
+            "[data-accordionSecond-control]"
+          );
+          // console.log(buttons);
+
+          buttons.forEach((button) => {
+            const selfID = button.getAttribute("data-accordionSecond-control");
+            console.log(selfID);
+            const selfContent = document.querySelector(
+              `[data-accordionSecond-content='${selfID}']`
+            );
+            if (button.classList.contains("is-active")) {
+              button.classList.add("bg-blue-200", "text-blue-600");
+              selfContent.classList.remove("hidden");
+            } else {
+              button.classList.remove("bg-blue-200", "text-blue-600");
+              selfContent.classList.add("hidden");
+            }
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
